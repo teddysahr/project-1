@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Moodvie</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link
       rel="stylesheet"
@@ -13,19 +19,37 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-light bg-light">
-      <form class="form-inline">
+    <header>
+      <section id="banner" class="hero is-primary">
+        <div class="hero-body">
+          <p class="title">MOODVIE</p>
+          <p class="subtitle">find your movie</p>
+        </div>
+      </section>
+    </header>
+    <main class="container">
+      <div class="box">
+        <h1>Movie Search</h1>
+        <!-- Movie Search -->
+        <form>
+          <label for="movie"> Enter your movie: </label>
+          <input
+            id="movie-search"
+            type="search"
+            placeholder="Dune"
+            name="search"
+          />
+        </form>
+        <!-- Movie Generator Button-->
         <input
-          class="form-control mr-sm-2"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
+          class="button is-danger"
+          type="button"
+          id="generate-button"
+          value="Click Me for a random movie!"
         />
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-          Search
-        </button>
-      </form>
-    </nav>
-    <script src="script.js"></script>
+      </div>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
