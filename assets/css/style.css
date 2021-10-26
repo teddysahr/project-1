@@ -1,7 +1,33 @@
 * {
   font-family: "Courier Prime", monospace;
+  font-size: 16px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.box {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.box h1 {
+  padding: 5px;
+  font-size: 200%;
+}
+
+#generate-button {
+  background-color: royalblue;
 }
 
 #banner {
   background-color: royalblue;
+}
+
+form {
+  padding: 10px;
 }

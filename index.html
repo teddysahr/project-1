@@ -22,23 +22,32 @@
       <section id="banner" class="hero is-primary">
         <div class="hero-body">
           <p class="title">MOODVIE</p>
-          <p class="subtitle">find you movie</p>
+          <p class="subtitle">find your movie</p>
         </div>
       </section>
     </header>
-    <h1>Test for Bulma</h1>
-    <!-- Movie Search -->
-    <form>
-      <label for="movie"> Enter your movie: </label>
-      <input id="movie-search" type="search" placeholder="Dune" name="search" />
-    </form>
-    <!-- Movie Generator Button-->
-    <input
-      class="button is-danger"
-      type="button"
-      id="generate-button"
-      value="Click Me for a random movie!"
-    />
+    <main class="container">
+      <div class="box">
+        <h1>Movie Search</h1>
+        <!-- Movie Search -->
+        <form>
+          <label for="movie"> Enter your movie: </label>
+          <input
+            id="movie-search"
+            type="search"
+            placeholder="Dune"
+            name="search"
+          />
+        </form>
+        <!-- Movie Generator Button-->
+        <input
+          class="button is-danger"
+          type="button"
+          id="generate-button"
+          value="Click Me for a random movie!"
+        />
+      </div>
+    </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./assets/js/script.js"></script>
   </body>
