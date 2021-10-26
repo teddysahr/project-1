@@ -6,7 +6,7 @@ fetch("https://watchmode.p.rapidapi.com/sources/?types=sub%2Cfree&regions=US%2CC
 	}
 })
 .then(response => {
-	console.log(response);
+	console.log(response.status);
 })
 .catch(err => {
 	console.error(err);
