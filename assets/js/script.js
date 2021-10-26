@@ -1,3 +1,11 @@
+
+// DEPENDENCIES ============================
+var movieSearch = $("#movie-search");
+var generateButton = $("#generate-button");
+console.log(movieSearch);
+console.log(generateButton);
+
+// Watchmode API
 fetch("https://watchmode.p.rapidapi.com/sources/?types=sub%2Cfree&regions=US%2CCA", {
 	"method": "GET",
 	"headers": {
@@ -11,3 +19,4 @@ fetch("https://watchmode.p.rapidapi.com/sources/?types=sub%2Cfree&regions=US%2CC
 .catch(err => {
 	console.error(err);
 });
+
