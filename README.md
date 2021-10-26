@@ -1,3 +1,6 @@
 # project-1
 
-As a movie/tv watcher I would like to quickly see where a movie or TV show is available to stream. 
+AS A subscriber with multiple streaming options
+I WANT to quickly know where I can stream a specific tv show or movie
+SO THAT I don’t have to manually scroll through each platform.
+IN THE CASE that I don’t have a movie in mind, the application also provides me with an option.
