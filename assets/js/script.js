@@ -25,35 +25,55 @@ submitBtn.on('click', function(){
 .then(function (data) {
     var movieId = data.title_results[0].id
     console.log(movieId)
-	getMovieInfo()
-})
-
-
-.catch(err => {
-	console.error(err);
-});
-
-})
-function getMovieInfo(){
-	fetch("https://watchmode.p.rapidapi.com/title/3173903/sources/", {
-	"method": "GET",
-	"headers": {
-		"regions": "US",
-		"x-rapidapi-host": "watchmode.p.rapidapi.com",
-		"x-rapidapi-key": "e6b61b06acmsh9f6def52697ec71p1fb2acjsn1e7a6eefdc13"
+	getMovieInfo(movieId)
+	function getMovieInfo(movieId){
+		fetch(`https://watchmode.p.rapidapi.com/title/${movieId}/sources/`, {
+			"method": "GET",
+			"headers": {
+				"regions": "US",
+				"x-rapidapi-host": "watchmode.p.rapidapi.com",
+				"x-rapidapi-key": "e6b61b06acmsh9f6def52697ec71p1fb2acjsn1e7a6eefdc13"
+			}
+		})
+		.then(response => {
+			console.log(response);
+			return response.json();
+		})
+		.then(function(data){
+			console.log(data)
+		})
+		.catch(err => {
+			console.error(err);
+		});
 	}
 })
-.then(response => {
-	console.log(response);
-	return response.json();
-})
-.then(function(data){
-	
-})
+
+
 .catch(err => {
 	console.error(err);
 });
-}
+
+})
+// function getMovieInfo(movieId){
+// 	fetch(`https://watchmode.p.rapidapi.com/title/${movieId}/sources/`, {
+// 	"method": "GET",
+// 	"headers": {
+// 		"regions": "US",
+// 		"x-rapidapi-host": "watchmode.p.rapidapi.com",
+// 		"x-rapidapi-key": "e6b61b06acmsh9f6def52697ec71p1fb2acjsn1e7a6eefdc13"
+// 	}
+// })
+// .then(response => {
+// 	console.log(response);
+// 	return response.json();
+// })
+// .then(function(data){
+// 	console.log(data.type)
+// })
+// .catch(err => {
+// 	console.error(err);
+// });
+// }
 
 
 // Data-Imdb API - For random movie
