@@ -40,7 +40,11 @@ submitBtn.on('click', function(){
 			return response.json();
 		})
 		.then(function(data){
-			console.log(data)
+			var movieUrl = data.filter (function(data) {
+				if (data.type === "sub") return true
+				else return false
+				})
+				console.log(movieUrl)
 		})
 		.catch(err => {
 			console.error(err);
