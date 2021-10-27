@@ -26,17 +26,17 @@
 
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-end">
-            <a class="navbar-item"> About </a>
+            <a class="navbar-item" id="about-nav"> About </a>
 
-            <a class="navbar-item"> "Where's My Movie?" </a>
+            <a class="navbar-item" id="wmm-nav"> "Where's My Movie?" </a>
 
-            <a class="navbar-item"> "Mood" </a>
+            <a class="navbar-item" id="mood-nav"> "Mood" </a>
           </div>
         </div>
       </nav>
     </header>
     <main class="container">
-      <div class="box">
+      <div class="box" id="wmm-box">
         <h1>Where's My Movie?</h1>
         <!-- Movie Search -->
         <form>
@@ -50,7 +50,7 @@
         />
       </div>
 
-      <div class="box">
+      <div class="box" id="mood-box" style="display: none">
         <h1>Mood</h1>
         <!-- Movie Search -->
         <form>
@@ -90,8 +90,19 @@
           value="Generate"
         />
       </div>
+
+      <div class="box" id="about-box" style="display: none">
+        <h1>About</h1>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime vero
+          iusto deleniti dignissimos dolore tenetur quasi, praesentium neque,
+          veniam vitae odit sit harum quod pariatur ut repellat doloribus aut
+          error!
+        </p>
+      </div>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/pagenav.js"></script>
   </body>
 </html>
