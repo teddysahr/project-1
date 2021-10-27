@@ -23,8 +23,10 @@ submitBtn.on('click', function(){
     return response.json();
 })
 .then(function (data) {
-    console.log(data)
+    var movieId = data.title_results[0].id
+    console.log(movieId)
 })
+
 
 .catch(err => {
 	console.error(err);
