@@ -3,7 +3,12 @@
   font-size: 16px;
 }
 
+.hero-body p {
+  color: white;
+}
+
 .container {
+  flex-direction: column;
   display: flex;
   justify-content: center;
 }
@@ -20,6 +25,10 @@
   font-size: 200%;
 }
 
+#search-button {
+  background-color: royalblue;
+}
+
 #generate-button {
   background-color: royalblue;
 }
@@ -30,4 +39,36 @@
 
 form {
   padding: 10px;
+}
+
+#movie-search {
+  font-size: 300%;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.navbar-menu {
+  background-color: royalblue;
+}
+
+.navbar-end a:hover {
+  transition: 0.6s;
+}
+
+.navbar-brand {
+  padding: 15px;
+  font-size: 250%;
+  background-color: royalblue;
+  color: white;
+}
+
+.navbar-end a {
+  color: white;
+  border-radius: 5px;
+}
+
+.navbar {
+  border-style: solid;
+  border-width: 10px;
+  border-color: royalblue;
 }
