@@ -40,9 +40,14 @@ submitBtn.on('click', function(){
 			return response.json();
 		})
 		.then(function(data){
-			var movieUrl = data.filter (function(data) {
+			var movieInfo = data.filter (function(data) {
 				if (data.type === "sub") return true
 				else return false
+				})
+				console.log(movieInfo)
+				var movieUrl = movieInfo.filter(function(movieInfo){
+					if (movieInfo.region === 'US') return true
+					else return false
 				})
 				console.log(movieUrl)
 		})
