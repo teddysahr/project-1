@@ -21,7 +21,7 @@ submitBtn.on('click', function(){
     return response.json();
 })
 .then(function (data) {
-    console.log(data)
+    console.log(data.title_results[0].id)
 })
 
 .catch(err => {
