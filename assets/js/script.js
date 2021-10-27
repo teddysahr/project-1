@@ -1,39 +1,38 @@
 // DEPENDENCIES ============================
 var movieSearch = $("#movie-search");
 var generateButton = $("#generate-button");
-var submitBtn = $("#search-button")
+var submitBtn = $("#search-button");
 
 console.log(movieSearch);
 console.log(generateButton);
 
-
-submitBtn.on('click', function(){
-    var input = document.getElementById("movie-search").value;
-    console.log(input)
+submitBtn.on("click", function () {
+  var input = document.getElementById("movie-search").value;
+  console.log(input);
   // Watchmode API - For input --> id
-    fetch(`https://watchmode.p.rapidapi.com/search/?search_field=name&search_value=${input}&types=tv`, {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "watchmode.p.rapidapi.com",
-		"x-rapidapi-key": "e6b61b06acmsh9f6def52697ec71p1fb2acjsn1e7a6eefdc13"
-	}
-})
-.then(response => {
-	console.log(response);
-    return response.json();
-})
-.then(function (data) {
-    var movieId = data.title_results[0].id
-    console.log(movieId)
-})
+  fetch(
+    `https://watchmode.p.rapidapi.com/search/?search_field=name&search_value=${input}&types=tv`,
+    {
+      method: "GET",
+      headers: {
+        "x-rapidapi-host": "watchmode.p.rapidapi.com",
+        "x-rapidapi-key": "e6b61b06acmsh9f6def52697ec71p1fb2acjsn1e7a6eefdc13",
+      },
+    }
+  )
+    .then((response) => {
+      console.log(response);
+      return response.json();
+    })
+    .then(function (data) {
+      var movieId = data.title_results[0].id;
+      console.log(movieId);
+    })
 
-
-.catch(err => {
-	console.error(err);
+    .catch((err) => {
+      console.error(err);
+    });
 });
-
-})
-
 
 // Data-Imdb API - For random movie
 fetch("https://data-imdb1.p.rapidapi.com/movie/order/upcoming/?page_size=50", {
@@ -53,4 +52,3 @@ fetch("https://data-imdb1.p.rapidapi.com/movie/order/upcoming/?page_size=50", {
   .catch((err) => {
     console.error(err);
   });
-
