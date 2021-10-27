@@ -40,22 +40,14 @@ submitBtn.on('click', function(){
 			return response.json();
 		})
 		.then(function(data){
-			var movieInfo = data.filter (function(data) {
-				if (data.type === "sub") return true
+			var movieUrl = data.filter (function(data) {
+				if (data.type === "sub" && data.region === 'US') return true
 				else return false
 				})
-				console.log(movieInfo)
-				var movieUrl = movieInfo.filter(function(movieInfo){
-					if (movieInfo.region === 'US') return true
-					else return false
-				})
-				for (let i = 0; i < movieUrl.length; i++) {
-					console.log(movieUrl[i].web_url)	
+				for (let i = 0; i <= data.length; i++) {
+					console.log(movieUrl[i].web_url);
 				}
 		})
-		.catch(err => {
-			console.error(err);
-		});
 	}
 })
 
