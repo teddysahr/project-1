@@ -49,7 +49,9 @@ submitBtn.on('click', function(){
 					if (movieInfo.region === 'US') return true
 					else return false
 				})
-				console.log(movieUrl)
+				for (let i = 0; i < movieUrl.length; i++) {
+					console.log(movieUrl[i].web_url)	
+				}
 		})
 		.catch(err => {
 			console.error(err);
