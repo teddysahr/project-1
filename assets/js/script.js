@@ -3,12 +3,13 @@ var movieSearch = $("#movie-search");
 var generateButton = $("#generate-button");
 var submitBtn = $("#search-button");
 var resultList = $("#results-list");
+var imageBox = $("#image-box");
 
 console.log(movieSearch);
 console.log(generateButton);
 
 submitBtn.on("click", function () {
-  clearLinks();
+  clearPage();
   // removeAllChildNodes()
   var input = document.getElementById("movie-search").value;
   console.log(input);
@@ -88,8 +89,12 @@ submitBtn.on("click", function () {
     })
     .then(function (data) {
       console.log(data);
-      var movieImage = data.d[0].i.imageUrl;
-      console.log(movieImage);
+      var movieImageUrl = data.d[0].i.imageUrl;
+      console.log(movieImageUrl);
+      var movieImage = document.createElement("img");
+      movieImage.setAttribute("src", movieImageUrl);
+      // movieImage.setAttribute("alt", )
+      imageBox.append(movieImage);
     })
 
     .catch((err) => {
@@ -101,9 +106,10 @@ submitBtn.on("click", function () {
 //         resultList.removeChild(listItem);
 //     }
 // }
-function clearLinks() {
+function clearPage() {
   resultList.empty();
   console.log(resultList);
+  imageBox.empty();
 }
 
 // Data-Imdb API - For random movie
