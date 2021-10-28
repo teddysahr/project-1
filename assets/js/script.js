@@ -2,6 +2,7 @@
 var movieSearch = $("#movie-search");
 var generateButton = $("#generate-button");
 var submitBtn = $("#search-button")
+var resultList = $('#results-list')
 
 console.log(movieSearch);
 console.log(generateButton);
@@ -47,8 +48,12 @@ submitBtn.on('click', function(){
 					for (let i = 0; i <= data.length; i++) {
 					console.log(movieUrl[i].web_url);
 					var listItem = document.createElement('li');
-					listItem.textContent = movieUrl[i].web_url
-					
+					var listLink = document.createElement('a')
+					listItem.appendChild(listLink)
+					listLink.setAttribute('href', movieUrl[i].web_url)
+					listLink.textContent = movieUrl[i].web_url;
+					resultList.append(listItem);
+
 				}
 		})
 	}
