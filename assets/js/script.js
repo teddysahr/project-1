@@ -76,7 +76,7 @@ submitBtn.on("click", function () {
       console.error(err);
     });
   // Second IMDB API - for movie image
-  fetch("https://imdb8.p.rapidapi.com/auto-complete?q=titanic", {
+  fetch(`https://imdb8.p.rapidapi.com/auto-complete?q=${input}`, {
     method: "GET",
     headers: {
       "x-rapidapi-host": "imdb8.p.rapidapi.com",
