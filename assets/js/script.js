@@ -20,7 +20,7 @@ submitBtn.on("click", function () {
       method: "GET",
       headers: {
         "x-rapidapi-host": "watchmode.p.rapidapi.com",
-        "x-rapidapi-key": "e6b61b06acmsh9f6def52697ec71p1fb2acjsn1e7a6eefdc13",
+        "x-rapidapi-key": "5ed6e03ed9msh7f3cf8adcee92c6p173cb3jsnea313b4c5fbc",
       },
     }
   )
