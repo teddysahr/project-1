@@ -165,3 +165,12 @@ footer {
   text-align: center;
   height: 30px;
 }
+
+li a {
+  color: white;
+}
+
+li a:hover {
+  color: white;
+  opacity: 60%;
+}
