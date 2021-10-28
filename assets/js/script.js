@@ -44,8 +44,11 @@ submitBtn.on('click', function(){
 				if (data.type === "sub" && data.region === 'US') return true
 				else return false
 				})
-				for (let i = 0; i <= data.length; i++) {
+					for (let i = 0; i <= data.length; i++) {
 					console.log(movieUrl[i].web_url);
+					var listItem = document.createElement('li');
+					listItem.textContent = movieUrl[i].web_url
+					
 				}
 		})
 	}
