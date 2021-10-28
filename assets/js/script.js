@@ -25,6 +25,33 @@ submitBtn.on('click', function(){
 .then(function (data) {
     var movieId = data.title_results[0].id
     console.log(movieId)
+	getMovieInfo(movieId)
+	function getMovieInfo(movieId){
+		fetch(`https://watchmode.p.rapidapi.com/title/${movieId}/sources/`, {
+			"method": "GET",
+			"headers": {
+				"regions": "US",
+				"x-rapidapi-host": "watchmode.p.rapidapi.com",
+				"x-rapidapi-key": "e6b61b06acmsh9f6def52697ec71p1fb2acjsn1e7a6eefdc13"
+			}
+		})
+		.then(response => {
+			console.log(response);
+			return response.json();
+		})
+		.then(function(data){
+			var movieUrl = data.filter (function(data) {
+				if (data.type === "sub" && data.region === 'US') return true
+				else return false
+				})
+					for (let i = 0; i <= data.length; i++) {
+					console.log(movieUrl[i].web_url);
+					var listItem = document.createElement('li');
+					listItem.textContent = movieUrl[i].web_url
+					
+				}
+		})
+	}
 })
 
 
@@ -33,6 +60,26 @@ submitBtn.on('click', function(){
 });
 
 })
+// function getMovieInfo(movieId){
+// 	fetch(`https://watchmode.p.rapidapi.com/title/${movieId}/sources/`, {
+// 	"method": "GET",
+// 	"headers": {
+// 		"regions": "US",
+// 		"x-rapidapi-host": "watchmode.p.rapidapi.com",
+// 		"x-rapidapi-key": "e6b61b06acmsh9f6def52697ec71p1fb2acjsn1e7a6eefdc13"
+// 	}
+// })
+// .then(response => {
+// 	console.log(response);
+// 	return response.json();
+// })
+// .then(function(data){
+// 	console.log(data.type)
+// })
+// .catch(err => {
+// 	console.error(err);
+// });
+// }
 
 
 // Data-Imdb API - For random movie
