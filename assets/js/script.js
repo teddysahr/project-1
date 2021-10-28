@@ -14,7 +14,7 @@ submitBtn.on("click", function () {
   console.log(input);
   // Watchmode API - For input --> id
   fetch(
-    `https://watchmode.p.rapidapi.com/search/?search_field=name&search_value=${input}&types=tv`,
+    `https://watchmode.p.rapidapi.com/search/?search_field=name&search_value=${input}&types=movie`,
     {
       method: "GET",
       headers: {
@@ -50,8 +50,14 @@ submitBtn.on("click", function () {
               if (data.type === "sub" && data.region === "US") return true;
               else return false;
             });
+            console.log(movieUrl.length)
+            if (movieUrl.length === 0) {
+              var noLink = document.createElement('li')
+              noLink.textContent = "Sorry, we couldn't find a streaming service for this title"
+              resultList.append(noLink)
+            }
             for (let i = 0; i < movieUrl.length; i++) {
-				console.log(movieUrl[i])
+				    console.log(movieUrl[i])
               var listItem = document.createElement("li");
               var listLink = document.createElement("a");
               listItem.appendChild(listLink);
