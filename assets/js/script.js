@@ -73,6 +73,21 @@ submitBtn.on("click", function () {
     .catch((err) => {
       console.error(err);
     });
+  fetch("https://imdb8.p.rapidapi.com/auto-complete?q=titanic", {
+    method: "GET",
+    headers: {
+      "x-rapidapi-host": "imdb8.p.rapidapi.com",
+      "x-rapidapi-key": "5ed6e03ed9msh7f3cf8adcee92c6p173cb3jsnea313b4c5fbc",
+    },
+  })
+    .then((response) => {
+      console.log(response);
+      return response.json();
+    })
+    .then(data)
+    .catch((err) => {
+      console.error(err);
+    });
 });
 // function removeAllChildNodes(resultList) {
 //     while (resultList.listItem) {
